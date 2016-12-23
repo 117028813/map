@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <title>baidu map</title>
+  <style>
+    #container {
+      width: 400px;
+      height: 300px;
+    }
+    .anchorBL {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="https://api.map.baidu.com/api?v=2.0&ak=gyw8OlrFd5r2KNFuH2P2bxvX7tvxAs7N"></script>
+  
+  <script>
+    var map = new BMap.Map('container');
+    var point = new BMap.Point(123.43, 41.81);
+    map.centerAndZoom(point, 13);
+    var opts = {type: BMAP_NAVIGATION_CONTROL_ZOOM};
+    map.addControl(new BMap.NavigationControl(opts));
+    
+    // var opts = {offset: new BMap.Size(150, 5)};
+    // map.addControl(new BMap.ScaleControl(opts));
+    // map.addControl(new BMap.OverviewMapControl());
+    // map.addControl(new BMap.MapTypeControl());
+    // map.setCurrentCity('沈阳');
+
+    // window.setTimeout(function(){  
+    //   map.panTo(new BMap.Point(116.409, 39.918));    
+    // }, 2000);
+
+    // function ZoomControl() {
+    //   this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+    //   this.defaultOffset = new BMap.Size(10, 10);
+    // }
+    // ZoomControl.prototype = new BMap.Control();
+
+    // ZoomControl.prototype.initialize = function (map) {
+    //   var div = document.createElement('div');
+    //   div.appendChild(document.createTextNode('放大2级'));
+    //   div.style.cursor = 'pointer';
+    //   div.style.border = '1px solid gray';
+    //   div.style.backgroundColor = 'white';
+    //   div.onclick = function (e) {
+    //     map.zoomTo(map.getZoom() + 2);
+    //   }
+    //   map.getContainer().appendChild(div);
+    //   return div;
+    // }
+
+    // var myZoomControl = new ZoomControl();
+    // map.addControl(myZoomControl);
+  </script>
+</body>
+</html>
